@@ -30,6 +30,7 @@ const port=process.env.PORT||8000;
 
 //Routing
 app.use('/api',authRoutes);//http://localhost:8000/api/signout
+//console
 
 //Starting a Server
 app.listen(port,()=>
