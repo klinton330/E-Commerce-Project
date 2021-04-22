@@ -5,7 +5,10 @@ const app=express();
 const bodyParser=require("body-parser");
 const cookieParser=require("cookie-parser");
 const cors=require("cors");
+
+//my routes
 const authRoutes=require('./routes/auth');
+const userRoutes=require('./routes/user');
 
 
 //DB CONNECTIONS
@@ -30,6 +33,7 @@ const port=process.env.PORT||8000;
 
 //Routing
 app.use('/api',authRoutes);//http://localhost:8000/api/signout
+app.use('/api',userRoutes);
 //console
 
 //Starting a Server
