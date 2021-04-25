@@ -102,7 +102,6 @@ userProperty:"auth"})
  //Custom Middleware
 exports.isAuthenticated=(req,res,next)=>{
     //req.profile-> is coming from frontend and "profile" is identifier we can give any name
-    console.log("Third")
     let checker=req.profile && req.auth && req.profile._id==req.auth._id;
     if(!checker)
     {
