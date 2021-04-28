@@ -9,6 +9,7 @@ const cors=require("cors");
 //my routes
 const authRoutes=require('./routes/auth');
 const userRoutes=require('./routes/user');
+const catagoryRoutes=require('./routes/catagory');
 
 
 //DB CONNECTIONS
@@ -34,6 +35,7 @@ const port=process.env.PORT||8000;
 //Routing
 app.use('/api',authRoutes);//http://localhost:8000/api/signout
 app.use('/api',userRoutes);
+app.use('/api',catagoryRoutes);
 //console
 
 //Starting a Server

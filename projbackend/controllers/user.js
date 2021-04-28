@@ -73,9 +73,10 @@ exports.userPurchaseList=(req,res)=>
     });
 };
 
-
+//Middleware
 exports.pushOrderInPurchaseList=(req,res,next)=>{
     let purchase=[];
+    //Products=[o1,o2,o3]
     req.body.order.products.forEach(product=>{
         purchase.push({
             _id: product.id,
