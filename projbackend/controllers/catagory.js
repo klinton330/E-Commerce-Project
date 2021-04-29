@@ -45,3 +45,33 @@ exports.getAllCatagory=(req,res)=>
        res.json(items);
    })
 }
+
+exports.updateCatagory=(req,res)=>{
+    const catagory=req.catagory;
+    catagory.name=req.body.name;
+
+    catagory.save((err,updated)=>{
+        if(err){
+            return res.status(400).json({
+            error:"Failed to update Catagory"
+        })
+    }
+    res.json(updated);
+})
+}
+
+exports.removeCatagory=(req,res)=>
+{
+    const catagory=req.catagory;
+    catagory.remove((err,catagory)=>{
+        if(err)
+        {
+            return res.status(400).json({
+                error:"Failed to delete this catagory"
+            })
+        }
+        res.json({
+            messege:"Record deleted successfully"
+        })
+    })
+}
